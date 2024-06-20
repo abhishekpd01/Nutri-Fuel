@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="/CSS/signUp.css">
+</head>
+<body>
+    <form action="/userInfo" method="post">
+        <div class="swiper mySwiper">   
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide1">
+                    <h1>Hello!</h1>
+                    <h2>What is Your Name?</h2>
+
+                    <span><input type="text" placeholder="Enter Your Name" name="name" required></span>
+                    
+                    <div class="nav-btn">
+                        <div class="back"><a href="/"><button type="button">Back</button></a></div>
+                        <div class="next nextStyle"><button>Next</button></div>
+                      </div>
+                </div>
+                <div class="swiper-slide slide2">
+
+                    <h2>What is Your Sex?</h2>
+
+                    <span class="gender-selection">
+                        
+                        <button type="button" class="gender">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male"><img src="/Assets/male.png" alt="Male" height="150px"><p>Male</p></label>
+                        </button>
+                        <button type="button" class="gender">
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            <label for="female"><img src="/Assets/female.png" alt="Female" height="150px"><p>Female</p></label>
+                        </button>
+                    </span>
+                    
+                    <div class="nav-btn">
+                        <div class="prev back "><button>Back</button></div>
+                        <div class="next nextStyle"><button>Next</button></div>
+                      </div>
+                </div>
+                <div class="swiper-slide slide3">
+                    <h2>What is Your Age?</h2>
+
+                    <span><input type="text" placeholder="Enter Your Age" name="age" required></span>
+                    
+                    <div class="nav-btn">
+                        <div class="prev back"><button>Back</button></div>
+                        <div class="next nextStyle"><button>Next</button></div>
+                      </div>
+                </div>
+                <div class="swiper-slide slide4">
+                    <h2>How Tall are you?</h2>
+
+                    <span><input type="text" placeholder="Enter Your Height in m" name="height" required></span>
+                    
+                    <div class="nav-btn">
+                        <div class="prev back"><button>Back</button></div>
+                        <div class="next nextStyle"><button>Next</button></div>
+                      </div>
+                </div>
+                <div class="swiper-slide slide5">
+                    <h2>What is your current Weight?</h2>
+
+                    <span><input type="text" placeholder="Enter Your Weight in kg" name="Weight" required></span>
+                    
+                    <div class="nav-btn">
+                        <div class="prev back"><button>Back</button></div>
+                        <div class="nextStyle"><button type="submit" class="submitBtn">Go</button></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          prevEl: ".prev",
+          nextEl: ".next",
+        },
+    });
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+form{
+    margin-top: 80px;
+    width: min(95%,720px);
+    height: auto;
+    margin-inline: auto;
+}
+
+form h1{
+    text-align: center;
+    font-weight: 300;
+    font-size: 42px;
+}
+@media screen and (width: 600px){
+    form h1{
+        font-size: 35px;
+    }
+}
+
+.result-container{
+    display: grid;
+    align-content: space-evenly;
+    justify-content: start;
+    margin-top: 25px;
+    padding: 15px;
+    margin-inline: auto;
+    border: 2px solid #609966;
+    border-radius: 5px;
+}
+
+.result-container p{
+    font-size: large;
+}
+
+.btn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.btn button{
+    cursor: pointer;
+    height: 55px;
+    width: 145px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    background: #9DC08B;
+    color: white;
+    transition: ease-in .3s;
+}
+
+@media screen and (max-width: 600px) {
+    .btn button{
+        width: 100px;
+        font-size: 16px;
+        height: 45px;
+    }
+}
+
+.btn button:hover{
+    background: #488f55;
+}

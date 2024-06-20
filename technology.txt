@@ -1,0 +1,13 @@
+Front End Technology:-
+Html5
+CSS
+SwiperJS
+fontawesome (for icons)
+Vanilla JS
+
+
+Back End Technology:-
+nodeJS
+express
+openai
+ejs

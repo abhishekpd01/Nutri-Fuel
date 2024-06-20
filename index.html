@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Home</title>
+
+   <link rel="stylesheet" href="CSS/style.css">
+   
+   <!-- icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <!-- Swiper CSS -->
+   <link rel="stylesheet" href="CSS/cdn.jsdelivr.net_npm_swiper@10.0.4_swiper-bundle.min.css">
+</head>
+<body>
+
+   <section class="hero">
+      <div class="navbar">
+         <div class="logo"></div>
+         <div class="menu menu-items">
+            <ul>
+               <li><a href="/">Home</a></li>
+               <li><a href="About">About</a></li>
+               <li><a href="Contact">Contact</a></li>
+               <li><a href="Session">Sessions</a></li>
+               <li class="btn-pop"><a href="#">Sign Up</a></li>
+            </ul>
+         </div>
+      </div>
+
+      <div class="wrapper">
+        <span class="icon-close"><i class="fa-solid fa-xmark" style="color: #ffffff;"></i></span>
+
+        <div class="sign-up-form-box sign-up">
+            <h2>Sign Up</h2>
+            <form action="/" method="post">
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input class="fName" name="fName" type="text" autofocus required>
+                    <label for="fName">First Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input name="lName" type="text" required>
+                    <label for="lName">Last Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input name="email" type="email" required>
+                    <label for="fName">Email</label>
+                </div>
+                <button type="submit">Sign me Up!</button>
+            </form>
+        </div>
+      </div>
+
+      <div class="container">
+         <div class="tagline">
+            <h1>This is a Tagline Added Later</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, repellendus.</p>
+         </div>
+
+         <div class="sign-up-btn">
+            <button>Sign Up</button>
+         </div>
+      </div>
+   </section>
+
+   <section>
+      <div class="heading">
+         <h1>Start Your Journey Now</h1>
+      </div>
+
+      <div class="features">
+         <div class="features-box">
+            <div class="content box1">
+               <div class="head">
+                  <h2>Custom Fitness Plan</h2>
+                  <div class="icon-fitness"></div>
+               </div>
+               <p>Personalized Nutrition and Fitness Programs tailored to your needs and objectives.</p>
+            </div>
+            <div class="content box2">
+               <div class="head">
+                  <h2>Health Insights</h2>
+                  <div class="icon-insights"></div>
+               </div>
+               <p>In-depth examination to assist you in adhering to your health regimen and optimizing your fitness.</p>
+            </div>
+            
+         </div>
+         <div class="features-box content2">
+            <div class="head">
+               <h2>Excellent Trainers</h2>
+               <div class="icon-trainers"></div>
+            </div>
+            <div><img src="Assets/pngwing.com.png" style="height: 288px;"></div>
+            <p>Top-notch coaches to lead and inspire you towards optimal health and wellness.</p>
+         </div>
+      </div>
+   </section>
+
+   <section class="trackers">
+    <div class="btn-wrapper">
+        <h1>Track your Activity</h1>
+        <div class="tracker-row row1">
+            <a href="TrackWorkout">
+                <div class="tracker tracker1"> 
+                    <div class="img"><img src="Assets/calorie.png" alt="not found" height="115px" width="115px"></div>
+                    <h2>Track Workout</h2>
+                </div>
+            </a>
+            <a href="TrackMeal">
+                <div class="tracker tracker2"> 
+                    <div class="img"><img src="Assets/meal.png" alt="not found" height="115px" width="115px"></div>
+                    <h2>Track Meal</h2> 
+                </div>
+            </a>
+        </div>
+        <div class="tracker-row row2">
+            <a href="TrackWater">
+                <div class="tracker tracker3">
+                    <div class="img"><img src="Assets/water.png" alt="not found" height="115px" width="115px"></div>
+                    <h2>Track Water</h2> 
+                </div>
+            </a>
+            <a href="Recipes">
+                <div class="tracker tracker4">
+                    <div class="img"><img src="Assets/recipe.png" alt="not found" height="115px" width="115px"></div>
+                    <h2>Recipes</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+   </section>
+
+   <section class="session-booking">
+      <div class="online-session">
+         <div class="bookNow">
+            <h1>Book an Online Session</h1>
+            <p>Pro Coaches and Trainers to guide you at every step of fitness.</p>
+            <div class="book-button">
+                <a href="Session"><button>Book Now</button></a>
+            </div>
+         </div>
+         <div class="session-image">
+            <div class="image"></div>
+         </div>
+      </div>
+   </section>
+
+   <section class="customers">
+      <h1>Our Happy Users</h1>
+
+      <div class="slide-container swiper">
+         <div class="slide-content">
+             <div class="card-wrapper swiper-wrapper">
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="Assets/img_avatar_1.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+                 
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="Assets/img_avatar_2.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="Assets/img_avatar_1.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+                 
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="Assets/img_avatar_2.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="Assets/img_avatar_1.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+                 
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="Assets/img_avatar_2.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="/Assets/img_avatar_1.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+                 
+                 <div class="card swiper-slide">
+                     <div class="image-content">
+                         <span class="overlay"></span>
+ 
+                         <div class="card-image">
+                             <img src="Assets/img_avatar_2.png" alt="" class="card-img">
+                         </div>
+                     </div>
+ 
+                     <div class="card-content">
+                         <h2 class="name">John Doe</h2>
+                         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda deleniti necessitatibus iure repellat illum magnam reiciendis quo dignissimos quidem?</p>
+                     </div>
+                 </div>
+ 
+             </div>
+         </div>
+ 
+         <div class="swiper-button-prev swiper-button-black swiper-nav"></div>
+         <div class="swiper-button-next swiper-button-black swiper-nav"></div>
+         <div class="swiper-pagination"></div>
+     </div>
+   </section>
+
+   <section class="image-gallery">
+    <div class="gallery-container">
+        <div class="img1 gallery"></div>
+        <div class="img2 gallery"></div>
+        <div class="img3 gallery"></div>
+        <div class="img4 gallery"></div>
+    </div>
+   </section>
+
+   <section class="footer">
+      <div class="footer-content">
+          
+          <div class="nav-links">
+                <img src="Assets/logo-resized.png" alt="image" height="90px">
+                <div class="link">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="About">About</a></li>
+                        <li><a href="Contact">Contact</a></li>
+                        <li><a href="Session">Sessions</a></li>
+                    </ul>
+                </div>
+                <div class="social-link">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>&nbsp;&nbsp;
+                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>&nbsp;&nbsp;
+                    
+                </div>
+
+                <p>© 2035 by Company name</p>
+            </div>
+
+         <div class="contact-form">
+
+            <h2>Contact Us</h2>
+            <div class="form-container">
+                <form action="#">
+                    <div class="name-info">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                    </div><br/><br/>
+                    <div class="contact-info">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                        <input type="email" placeholder="Email Address" required>
+                    </div><br/><br/>
+                    <div class="message">
+                        <textarea rows="4" cols="50" placeholder="Message..." required></textarea>
+                    </div><br>   
+     
+                    <button id="submitBtn">Submit</button>
+                 </form>
+            </div>
+         </div>
+      </div>   
+   </section>
+
+
+</body>
+
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<!-- Swiper JS -->
+<script src="JS/cdn.jsdelivr.net_npm_swiper@10.0.4_swiper-bundle.min.js"></script>
+
+<!-- JavaScript -->
+<script src="JS/script.js"></script>
+</html>

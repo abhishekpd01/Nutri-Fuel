@@ -1,0 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.swiper-slide{
+    height: 100vh;
+    padding: 40px;
+    text-align: center;
+    display: grid;
+    align-content: space-evenly;
+}
+
+.swiper-slide h1{
+    font-size: 75px;
+    font-weight: 400;
+}
+
+.swiper-slide h2{
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+span input[type=text]{
+    height: 80px;
+    width: 85%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #9DC08B;
+}
+
+.gender-selection{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+span input[type=radio]{
+    appearance: none;
+}
+
+.gender{
+    background-color: transparent;
+    border: none;
+    height: 230px;
+    width: 230px;
+}
+
+/* .active{
+    background-color: transparent;
+    border: 2px solid #9DC08B;
+    border-radius: 5px;
+    height: 230px;
+    width: 230px;
+} */
+
+span input[type=radio]:hover{
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #9DC08B;
+    border-radius: 5px;
+    height: 230px;
+    width: 230px;
+}
+
+span input[type=radio]:checked{
+    background-color: transparent;
+    border: 2px solid #9DC08B;
+    border-radius: 5px;
+    height: 230px;
+    width: 230px;
+}
+
+label p{
+    position: relative;
+    top: 15px;
+    font-size: 18px;
+}
+
+
+span input::placeholder{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    color: #9DC08B;
+}
+
+.nav-btn{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+  
+.nav-btn button{
+    cursor: pointer;
+    height: 60px;
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+
+.back button{
+    color: #9DC08B;
+    background-color: transparent;
+}
+
+.back i{
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+}
+
+.nextStyle button{
+    background: #9DC08B;
+    color: white;
+    transition: ease-in .3s;
+}
+
+.nextStyle button:hover{
+    background: #488f55;
+}

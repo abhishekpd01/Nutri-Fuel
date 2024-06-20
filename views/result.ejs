@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="CSS/result.css">
+    
+</head>
+<body>
+    <form action="/result" method="post">
+        <h1>Based on the information you provided following result is generated: </h1>
+        <div class="result-container">
+            <div class="bmi">
+                <h2>Your BMI is : </h2> 
+                <p><%= bmiResult %></p> 
+            </div>
+            <br>
+
+            <div class="diet-plan">
+                <h2>Your Suggested Diet Plan:</h2>
+                <p><%= dietPlan %></p>
+            </div>
+            <br>
+
+            <div class="exercise-routine">
+                <h2>Exercise Routine you should follow:</h2>
+                <p><%= exerciseData %></p>
+            </div>
+            <br>
+
+        </div>
+        <div class="btn">
+            <button type="submit">Go Home</button>
+        </div>
+    </form>
+</body>
+</html>

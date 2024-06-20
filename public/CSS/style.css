@@ -1,0 +1,742 @@
+*{
+   margin-top: 0%;
+   padding: 0%;
+   box-sizing: border-box;
+}
+
+body{
+   margin: 0;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   scroll-behavior: smooth;
+}
+
+/* navbar css */
+
+.navbar {
+   background-color: rgb(237, 241, 214);
+   display: flex;
+   width: 94%;
+   height: 75px;
+   margin-inline: auto;
+   position: relative;
+   top: 1.5rem;
+   z-index: 999;
+}
+
+.logo{
+   background: url(/Assets/logo.png) no-repeat;
+   background-size: 13rem;
+   background-position: center;
+   width: 10%;
+   height: 90px;
+}
+
+.navbar
+.menu-items a{
+  position: relative;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+  margin-left: 18px;
+  transition: 0.3s ease;
+}
+
+.navbar
+.menu-items a:before{
+  content: '';
+  position: absolute;
+  background: #000;
+  width: 0;
+  height: 3px;
+  bottom: 1px;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+.navbar
+.menu-items a:hover:before{
+  width: 100%;
+}
+
+.menu {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.menu ul {
+   list-style-type: none;
+   margin: 0;
+   padding-inline: 20px;
+   overflow: hidden;
+}
+
+li {
+   float: left;
+}
+
+.menu li a {
+   display: block;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   color: black;
+   font-size: 17px;
+}
+
+/* hero css */
+
+.hero {
+   background: rgba(41, 34, 34, 0.193) url(/Assets/pexels-vanessa-loring-5965653.jpg);
+   background-attachment: fixed;
+   background-blend-mode: darken;
+   height: 50rem;
+   background-size: cover;
+}
+
+.wrapper{
+   z-index: 999;
+   position: relative;
+   margin-inline: auto;
+   height: 400px;
+   width: 440px;
+   background: transparent;
+   border: 2px solid rgba(255, 255, 255, .5);
+   border-radius: 20px;
+   backdrop-filter: blur(20px);
+   overflow: hidden;
+   transform: scale(0);
+   transition: all .3s;
+   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.wrapper .icon-close{
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 45px;
+   height: 45px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 2em;
+   cursor: pointer;
+   z-index: 1;
+}
+
+.wrapper.active-pop{
+   transform: scale(1);
+}
+
+.wrapper .sign-up-form-box{
+   width: 100%;
+   padding: 40px;
+}
+
+.sign-up-form-box h2{
+   font-size: 2em;
+   color: white;
+   text-align: center;
+}
+
+.input-box{
+   position: relative;
+   width: 100%;
+   height: 50px;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.865);
+   margin: 30px 0;
+}
+
+.input-box label{
+   position: absolute;
+   top: 50%;
+   left: 5px;
+   transform: translateY(-50%);
+   font-size: 1em;
+   color: white;
+   font-weight: 500;
+   pointer-events: none;
+   transition: .3s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+   top: -5px;
+}
+
+.input-box input{
+   width: 100%;
+   height: 100%;
+   background: transparent;
+   border: none;
+   outline: none;
+   font-size: 1em;
+   color: white;
+   font-weight: 600;
+   padding: 0 35px 0 5px ;
+}
+
+.sign-up button{
+   width: 100%;
+   height: 45px;
+   background: white;
+   border: none;
+   border-radius: 6px;
+   font-size: 1em;
+   font-weight: 500;
+   cursor: pointer;
+   transition: ease-in .3s;
+}
+
+.sign-up button:hover{
+   color: white;
+   background: transparent;
+   border: 2px solid white;
+}
+
+.container {
+   padding: 5rem;
+   width: 60%;
+   overflow: hidden;
+
+   position: relative;
+   top: -22rem;
+}
+
+.tagline h1{
+   font-size: 68px;
+   font-weight: 400;
+   color: white;
+}
+
+.tagline p{
+   font-weight: 100;
+   font-size: 36px;
+   color: white;
+}
+
+/* @media (max-width: 800px) {
+   .tagline {
+     font-size: 30px;
+   }
+ } */
+
+.container button {
+   font-size: 20px;
+   padding: 20px;
+   border-radius: 50px;
+   border: none;
+   width: 8rem;
+   transition:.3s ease-in;
+}
+
+.container button:hover{
+   cursor: pointer;
+   border: 2px solid white;
+   color: white;
+   background: transparent;
+}
+
+/* features section */
+
+.heading {
+   margin-top: 50px;
+   text-align: center;
+   font-size: 50px;
+}
+
+.features{
+   display: flex;
+   margin-inline: auto;
+   width: 75%;
+   font-size: 25px;
+   font-weight: 300;
+}
+
+.features-box{
+   margin: 20px;
+}
+
+.content{
+   padding: 40px;
+   border-radius: 50px;
+   background: #EDF1D6;
+}
+
+.box1{
+   margin-bottom: 40px;
+}
+
+.content2{
+   background: #EDF1D6;
+   border-radius: 50px;
+   padding: 40px;
+}
+
+.head{
+   display: flex;
+   justify-content: space-between;
+}
+
+.icon-fitness{
+   background: url(/Assets/workout.png)no-repeat;
+   background-size: 65px;
+   background-position: center;
+   width: 55px;
+   height: 55px;
+}
+
+.icon-insights{
+   background: url(/Assets/graph.png)no-repeat;
+   background-size: 40px;
+   background-position: center;
+   width: 40px;
+   height: 40px;
+}
+
+.icon-trainers{
+   background: url(/Assets/group.png)no-repeat;
+   background-size: 50px;
+   background-position: center;
+   width: 50px;
+   height: 50px;
+}
+
+/* trackers section */
+
+.trackers{
+   margin-top: 100px;
+   margin-bottom: 200px;
+   height: 100vh;
+}
+
+.btn-wrapper{
+   width: 100%;
+   height: 100%;
+   margin-inline: auto;
+}
+
+.btn-wrapper h1{
+   font-weight: 400;
+   font-size: 55px;
+   text-align: center;
+}
+
+.tracker{
+   margin: 10px;
+   margin-inline: 40px;
+   margin-bottom: 40px;
+   width: 255px;
+   height: 238px;
+   border-radius: 19px;
+   display: grid;
+   align-content: space-between;
+}
+
+.tracker .img{ 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   top: 30px;
+}
+
+.tracker h2{
+   text-align: center;
+   font-weight: 400;
+   
+}
+
+.tracker1{
+   background: linear-gradient(135deg, #F94C10 39.73%, rgba(231, 177, 10, 0.00) 179.72%);
+}
+
+.tracker2{
+   background: linear-gradient(134deg, #E7B10A 13.39%, rgba(231, 177, 10, 0.00) 190.43%);
+}
+
+.tracker3{
+   background: linear-gradient(135deg, #8CABFF 39.73%, rgba(140, 171, 255, 0.00) 179.72%);
+}
+
+.tracker4{
+   background: linear-gradient(133deg, #F8DE22 16.71%, rgba(248, 222, 34, 0.00) 179.15%);
+}
+
+.tracker-row a{
+   text-decoration: none;
+   color: black;
+}
+.tracker-row a:visited{
+   text-decoration: none;
+   color: black;
+}
+
+.tracker-row{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+/* booking section */
+
+.session-booking{
+   margin-top: 100px;
+   margin-bottom: 100px;
+}
+
+.bookNow{
+   width: 50%;
+   height: 1037px;
+   padding-inline: 75px;
+   display: grid;
+   grid-template-rows: 0px;
+   grid-row-gap: 0px;
+   align-content: space-evenly;
+}
+
+.online-session{
+   background-color: #40513B;
+   width: 90%;
+   height: 1037px;
+   margin-inline: auto;
+   display: flex;
+   color: #FFF;
+}
+
+.online-session h1{
+   font-weight: 400;
+   font-size: 55px;
+}
+
+.online-session p{
+   font-size: 25px;
+   font-weight: 100;
+}
+
+.online-session button{
+   height: 65px;
+   border-radius: 5px;
+   border-style: none;
+   width: 125px;
+   text-decoration: none;
+   font-size: 18px;
+   color: #40513B;
+   cursor: pointer;
+   transition: .3s ease-in;
+}
+
+.online-session button:hover{
+   color: white;
+   background-color: transparent;
+   border: 1px solid white;
+   cursor: pointer;
+   transition: .3s ease-in;
+}
+
+.session-image{
+   width: 50%;
+   background-color: #fff;
+}
+
+.image{
+   background: url(/Assets/pexels-anna-shvets-6593720.jpg);
+   background-position: 36rem;
+   background-repeat: no-repeat;
+   background-size: 44rem;
+   background-attachment: fixed;
+   height: 100%;
+   width: 100%;
+}
+
+/* swiper CSS */
+
+.customers{
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.customers h1{
+   font-weight: 400;
+   font-size: 55px;
+}
+
+.slide-container{
+   max-width: 1200px;
+   width: 30%;
+   height: 400px;
+   padding: 40px 0;
+}
+.slide-content{
+   overflow: hidden;
+   border-radius: 25px;
+   margin: 0 40px;
+}
+.card{
+   width: 320px;
+   border-radius: 25px;
+   background-color: #fff;
+}
+.image-content,
+.card-content{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 10px 14px;
+}
+.image-content{
+   position: relative;
+   row-gap: 5px;
+   padding: 25px 0;
+}
+
+.overlay{
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   background-color: #9DC08B;
+   border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+   content: '';
+   position: absolute;
+   right: 0;
+   bottom: -40px;
+   height: 40px;
+   width: 40px;
+   background-color: #9DC08B;
+}
+.overlay::after{
+   border-radius: 0 25px 0 0;
+   background-color: #fff;
+}
+
+.card-image{
+   position: relative;
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   background: #fff;
+   padding: 3px;
+}
+.card-image .card-img{
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 4px solid #9DC08B;
+}
+
+.name{
+   font-size: 18px;
+   font-weight: 500;
+   color: #333;
+}
+.description{
+   font-size: 14px;
+   color: #707007;
+   text-align: center;
+}
+
+.swiper-nav{
+   transition: color 0.3s ease;
+   margin: -10px;
+}
+.swiper-nav:hover{
+   color: #5a7e4e;
+}
+
+.swiper-button-next{
+   right: 0;
+}
+.swiper-button-left{
+   left: 0;
+}
+
+/* image gallery */
+
+.image-gallery{
+   margin-top: 100px;
+   margin-bottom: 80px;
+}
+.gallery-container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 90%;
+   margin-inline: auto;
+}
+.gallery{
+   height: 202px;
+   width: 202px;
+}
+
+.img1{
+   background: url(/Assets/jennifer-schmidt-0XVrBLy73rw-unsplash.jpg) no-repeat;
+   background-position: center;
+   background-size: 220px;
+}
+.img2{
+   background: url(/Assets/eiliv-aceron-ZuIDLSz3XLg-unsplash.jpg) no-repeat;
+   background-position: center;
+   background-size: 210px;
+}
+.img3{
+   background: url(/Assets/huan-minh-C3aM2Nc7sbI-unsplash.jpg) no-repeat;
+   background-position: center;
+   background-size: 220px;
+}
+.img4{
+   background: url(/Assets/anna-pelzer-IGfIGP5ONV0-unsplash.jpg) no-repeat;
+   background-position: center;
+   background-size: 310px;
+}
+
+/* footer CSS */
+
+.footer{
+   background: #40513B;
+   width: 90%;
+   margin-inline: auto;
+}
+
+.footer-content{
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.footer-content img{
+   mix-blend-mode: color-dodge;
+   height: 120px;
+   position: relative;
+   top: 5px;
+   left: 3px;
+}
+
+.nav-links{
+   width: 50%;
+}
+
+.link{
+   display: flex;
+   align-items: center;
+   padding-inline: 10px;
+}
+
+.link ul{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+}
+
+.link li a{
+   display: block;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   color: #FFF;
+   font-size: 17px;
+   font-style: normal;
+   font-weight: 400;
+   line-height: normal;
+}
+
+.social-link{
+   position: relative;
+   display: block;
+   padding: 12px 24px;
+   font-size: 20px;
+}
+
+.social-link a{
+   text-decoration: none;
+   color: #fff;
+}
+
+.nav-links p{
+   position: relative;
+   display: block;
+   padding: 14px 24px;
+   color: #FFF;
+}
+
+.form-container{
+   display: flex;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+}
+
+.contact-form h2{
+   text-align: center;
+   font-weight: 500;
+   color: #FFF;
+}
+.contact-form{
+   padding: 20px;
+}
+.contact-form textarea{
+   width: -webkit-fill-available;
+   height: 115px;
+   padding-inline: 8px;
+   font-size: 15px;
+   box-sizing: border-box;
+   resize: none;
+}
+
+.contact-form input{
+   width: 213px;
+   height: 38px;
+   padding-inline: 8px;
+   font-size: 15px;
+   /* flex-shrink: 0; */
+}
+
+.contact-form textarea,input{
+   border: 1.5px solid #FFF;
+   background: transparent;
+   border-radius: 2px;
+   color: white;
+}
+
+.name-info,
+.contact-info{
+   display: flex;
+   justify-content: space-between;
+}
+
+.contact-form
+textarea::placeholder,
+input::placeholder{
+   color: rgba(255, 255, 255, 0.402);
+}
+
+.contact-form button{
+   width: -webkit-fill-available;
+   height: 50px;
+   color: #40513B;
+   border: none;
+   font-size: 18px;
+   background-color: white;
+   transition: ease-in 0.2s;
+}
+
+.contact-form button:hover{
+   cursor: pointer;
+   color: white;
+   border: 2px solid;
+   background-color:#40513B ;
+   border-color: white;
+}

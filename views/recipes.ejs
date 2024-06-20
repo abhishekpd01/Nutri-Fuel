@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="CSS/recipes.css">
+</head>
+<body>
+
+    <section class="recipe">
+        <!-- using a variable submitted we check whether the above form is submitted or not  
+        if value of submitted is true then and only then we execute the GPT section.-->
+
+        <div class="recipe-block">
+            <% if(submitted){ %>
+                <div class="gpt-response">
+                    <h1><%= Name %></h1>
+                    
+                    <h2>Description</h2>
+                    <p><%= Description %></p>
+        
+                    <h2>Ingredients</h2>
+                    <% Ingredients.forEach(function(ingredients) { %>
+                        <ul><%= ingredients %></ul>
+                    <% }); %>
+        
+                    <h2>Instructions</h2>
+                    <% Instructions.forEach(function(instruction) { %>
+                        <ul><%= instruction %></ul>
+                    <% }); %>
+        
+                    <h2>Tips</h2>
+                    <% Tips.forEach(function(tips) { %>
+                        <ul><%= tips %></ul>
+                    <% }); %>
+                </div>
+            <% } %>
+
+            <div class="redirectBtn">
+                <a href="/"><button>Home</button></a>
+            </div>
+        </div>
+
+        <div class="recipe-input">
+            <div class="input-container">
+                <div class="outer"></div>
+                <div class="inner">
+                    <form action="/Recipes" method="post">
+                        <div class="search-box">
+                            <input type="text" name="recipeName" placeholder="Enter recipe Name" required>
+                            <button><img src="/Assets/search.png" alt="Find" width="20px"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
