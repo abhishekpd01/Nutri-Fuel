@@ -69,20 +69,25 @@ app.post("/userInfo", async function(req, res){
         Weight : req.body.Weight,
     };
 
-    const gptResponse = await openai.createChatCompletion({
-        model:"gpt-3.5-turbo",
-        temperature: 0.1,
-        messages: [{role:"user", content:"My weight is " + information.Weight + " kg and height is " + information.Height + " m, calculate my BMI and also suggest a diet plan and exercise routine. return the response as json object with the keys BMI, exerciseRoutine and dietPlan."}]
-    });
-
-    // output received as json object
-    const result = JSON.parse(gptResponse.data.choices[0].message.content);
-
-    res.render("result", {
-        bmiResult: result.BMI,
-        exerciseData: result.exerciseRoutine,
-        dietPlan: result.dietPlan
-    });
+    try {
+        const gptResponse = await openai.createChatCompletion({
+            model:"gpt-3.5-turbo",
+            temperature: 0.1,
+            messages: [{role:"user", content:"My weight is " + information.Weight + " kg and height is " + information.Height + " m, calculate my BMI and also suggest a diet plan and exercise routine. return the response as json object with the keys BMI, exerciseRoutine and dietPlan."}]
+        });
+    
+        // output received as json object
+        const result = JSON.parse(gptResponse.data.choices[0].message.content);
+    
+        res.render("result", {
+            bmiResult: result.BMI,
+            exerciseData: result.exerciseRoutine,
+            dietPlan: result.dietPlan
+        });
+    } catch (error) {
+        console.error("Error occured: ", error);
+        res.status(error.response.status).send("An error occured while processing your request. " + error.response.status + ": " + error.response.statusText);
+    }
 });
 
 app.post("/result", function(req, res){
@@ -98,41 +103,51 @@ app.post("/TrackWorkout", async function(req, res){
     const duration = req.body.duration;
     const intensity = req.body.intensity;
 
-    const gptResponse = await openai.createChatCompletion({
-        model:"gpt-3.5-turbo",
-        temperature: 0.1,
-        messages: [{role:"user", content: "exercise type - "+ exerciseType + ", intensity - " + intensity + ", duration - "+ duration +" min. what is the total calorie burned suggest some tips, and return the response as a JSON object having key values as total_calorie_burned, tips."}]
-    });
-
-    const result = JSON.parse(gptResponse.data.choices[0].message.content);
-    console.log(result);
-
-    res.render("trackWorkout", {
-        submitted: true,
-        calorieBurned: result.total_calorie_burned,
-        Tips: result.tips,
-    });
+    try {
+        const gptResponse = await openai.createChatCompletion({
+            model:"gpt-3.5-turbo",
+            temperature: 0.1,
+            messages: [{role:"user", content: "exercise type - "+ exerciseType + ", intensity - " + intensity + ", duration - "+ duration +" min. what is the total calorie burned suggest some tips, and return the response as a JSON object having key values as total_calorie_burned, tips."}]
+        });
+    
+        const result = JSON.parse(gptResponse.data.choices[0].message.content);
+        console.log(result);
+    
+        res.render("trackWorkout", {
+            submitted: true,
+            calorieBurned: result.total_calorie_burned,
+            Tips: result.tips,
+        });
+    } catch (error) {
+        console.error("Error occured: ", error);
+        res.status(error.response.status).send("An error occured while processing your request. " + error.response.status + ": " + error.response.statusText);
+    }
 });
 
 app.post("/Recipes", async function(req, res){
     const recipeName = req.body.recipeName;
 
-    const gptResponse = await openai.createChatCompletion({
-        model:"gpt-3.5-turbo",
-        temperature: 0.1,
-        messages: [{role:"user", content: recipeName + " recipe return the response as json object having keys recipeName, description, ingredients, instructions and tips."}]
-    });
-
-    const result = JSON.parse(gptResponse.data.choices[0].message.content);
-
-    res.render("recipes", {
-        submitted: true,
-        Name: result.recipeName,
-        Description: result.description,
-        Ingredients: result.ingredients,
-        Instructions: result.instructions,
-        Tips: result.tips
-    });
+    try {
+        const gptResponse = await openai.createChatCompletion({
+            model:"gpt-3.5-turbo",
+            temperature: 0.1,
+            messages: [{role:"user", content: recipeName + " recipe return the response as json object having keys recipeName, description, ingredients, instructions and tips."}]
+        });
+    
+        const result = JSON.parse(gptResponse.data.choices[0].message.content);
+    
+        res.render("recipes", {
+            submitted: true,
+            Name: result.recipeName,
+            Description: result.description,
+            Ingredients: result.ingredients,
+            Instructions: result.instructions,
+            Tips: result.tips
+        });
+    } catch (error) {
+        console.error("Error occured: ", error);
+        res.status(error.response.status).send("An error occured while processing your request. " + error.response.status + ": " + error.response.statusText);
+    }
 });
 
 app.post("/TrackMeal", async function(req, res){
