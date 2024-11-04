@@ -22,19 +22,19 @@ app.use(express.static("public"));
 
 // GET requests
 app.get("/", function(req, res){
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/views/index.html");
 });
 
 app.get("/About", function(req, res){
-    res.sendFile(__dirname + "/about.html")
+    res.sendFile(__dirname + "/views/about.html")
 });
 
 app.get("/Contact", function(req, res){
-    res.sendFile(__dirname + "/contact.html")
+    res.sendFile(__dirname + "/views/contact.html")
 });
 
 app.get("/Session", function(req, res){
-    res.sendFile(__dirname + "/session.html")
+    res.sendFile(__dirname + "/views/session.html")
 });
 
 app.get("/TrackWorkout", function(req, res){
@@ -56,7 +56,7 @@ app.get("/Recipes", function(req, res){
 
 // POST requests
 app.post("/", function(req, res){
-    res.sendFile(__dirname + "/userInfo.html");
+    res.sendFile(__dirname + "/views/userInfo.html");
 });
 
 app.post("/userInfo", async function(req, res){
