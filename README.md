@@ -13,20 +13,38 @@ Nutri Fuel is an AI-based web application that assists users in tracking their w
 ## Project Structure
 ```
 Nutri-Fuel/
-├── node_modules/          # Node.js modules
-├── public/                # Static files (CSS, images, JavaScript)
-├── views/                 # EJS templates for frontend views
-├── .env                   # Environment variables
-├── .gitignore             # Files and directories to ignore in Git
-├── about                  # About page route
-├── app.js                 # Main application file
-├── contact                # Contact page route
-├── index                  # Homepage route
-├── package.json           # Project metadata and dependencies
-├── package-lock.json      # Lockfile for dependencies
-├── practice               # Practice page route
-├── session                # Session handling route
-├── userInfo               # User information handling route
+├── node_modules/           # Node.js modules
+├── public/                 # Static files (CSS, images, JavaScript)
+│   ├── CSS/
+│   ├── JS/
+│   └── Assets/
+├── views/                  # EJS or HTML templates for frontend views
+│   ├── index.html           # Main HTML/EJS file for the homepage
+│   ├── about.html           # HTML/EJS for the 'About' page
+│   ├── contact.html         # HTML/EJS for the 'Contact' page
+│   ├── recipes.ejs        # HTML/EJS for the 'recipe' page
+│   ├── session.html         # HTML/EJS for sessions
+│   ├── trackMeal.ejs         # HTML/EJS for tracking meal
+│   ├── trackWorkout.ejs        # HTML/EJS for tracking workout
+│   ├── trackWater.ejs        # HTML/EJS for tracking water intake
+│   └── userInfo.html        # HTML/EJS for user info
+├── routes/                 # Routes for handling endpoints
+│   ├── index.js
+│   ├── recipe.js
+│   ├── track.js
+│   └── user.js
+├── models/                 # Database schemas (for MongoDB)
+│   ├── User.js
+│   ├── Session.js
+│   └── Recipe.js
+├── config/                 # Configuration files
+│   └── config.js           # MongoDB connection and other settings
+├── .env                    # Environment variables
+├── .gitignore              # Git ignore file
+├── app.js                  # Main application file
+├── package.json            # Project metadata and dependencies
+├── package-lock.json       # Lockfile for dependencies
+└── LICENSE                 # License file
 ```
 
 ## Features
