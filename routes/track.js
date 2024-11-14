@@ -6,7 +6,7 @@ router.get("/workout", function(req, res) {
     res.render("trackWorkout", { submitted: false });
 });
 
-router.post("/TrackWorkout", async function(req, res) {
+router.post("/workout", async function(req, res) {
     const exerciseType = req.body.exerciseType;
     const duration = req.body.duration;
     const intensity = req.body.intensity;
