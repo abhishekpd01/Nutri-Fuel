@@ -1,13 +1,38 @@
 const express = require("express");
-const { handleUserSignup, handleUserLogin } = require("../controllers/user");
-
+const path = require("path");
 const router = express.Router();
 
-router.post('/', handleUserSignup);
+// GET requests
+router.get('/signup', (req, res) => {
+    res.render('signup');
+})
 
-router.post('/login', handleUserLogin);
+router.get('/login', (req, res) => {
+    res.render('login');
+})
 
-// // POST request for userInfo
+router.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+});
+
+router.get("/About", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/about.html"));
+});
+
+router.get("/Contact", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/contact.html"));
+});
+
+router.get("/Session", function(req, res) {
+    res.sendFile(path.join(__dirname + "/../views/session.html"));
+});
+
+// POST Requests
+
+// router.post("/", function(req, res) {
+//     res.sendFile(path.join(__dirname + "/../views/userInfo.html"))
+// })
+
 // router.post("/userInfo", async function(req, res) {
 //     const information = {
 //         Name: req.body.name,
