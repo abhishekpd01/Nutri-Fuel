@@ -34,7 +34,7 @@ const userRoutes = require('./routes/user');
 app.use('/user', userRoutes);
 app.use('/', staticRoutes);
 app.use('/track', restrictToLoggedInOnly, staticRoutes);
-app.use('/recipes', staticRoutes);
+app.use('/recipes', restrictToLoggedInOnly, staticRoutes);
 
 // Server Listener
 app.listen(3000, function() {
