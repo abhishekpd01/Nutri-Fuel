@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// GET and POST for Recipes
+// POST for Recipes
 router.post("/", async function(req, res) {
     const recipeName = req.body.recipeName;
 

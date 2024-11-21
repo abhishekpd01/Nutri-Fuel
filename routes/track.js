@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// GET and POST for trackWorkout
+// POST for trackWorkout
 
 router.post("/workout", async function(req, res) {
     const exerciseType = req.body.exerciseType;
