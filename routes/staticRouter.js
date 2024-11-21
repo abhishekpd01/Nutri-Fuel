@@ -27,6 +27,22 @@ router.get("/Session", function(req, res) {
     res.sendFile(path.join(__dirname + "/../views/session.html"));
 });
 
+router.get("/workout", function(req, res) {
+    res.render("trackWorkout", { submitted: false });
+});
+
+router.get("/meal", function(req, res) {
+    res.render("trackMeal");
+});
+
+router.get("/water", function(req, res) {
+    res.render("trackWater");
+});
+
+router.get("/recipes", function(req, res) {
+    res.render("recipes", { submitted: false });
+});
+
 // POST Requests
 
 // router.post("/", function(req, res) {

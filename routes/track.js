@@ -2,9 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 // GET and POST for trackWorkout
-router.get("/workout", function(req, res) {
-    res.render("trackWorkout", { submitted: false });
-});
 
 router.post("/workout", async function(req, res) {
     const exerciseType = req.body.exerciseType;
@@ -24,14 +21,6 @@ router.post("/workout", async function(req, res) {
         console.error("Error occurred: ", error);
         res.status(error.response.status).send("An error occurred while processing your request. " + error.response.status + ": " + error.response.statusText);
     }
-});
-
-router.get("/meal", function(req, res) {
-    res.render("trackMeal");
-});
-
-router.get("/water", function(req, res) {
-    res.render("trackWater");
 });
 
 module.exports = router;

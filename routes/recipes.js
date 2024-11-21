@@ -2,10 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 // GET and POST for Recipes
-router.get("/", function(req, res) {
-    res.render("recipes", { submitted: false });
-});
-
 router.post("/", async function(req, res) {
     const recipeName = req.body.recipeName;
 

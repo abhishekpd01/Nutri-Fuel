@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const dotenv = require("dotenv").config();
 const { Configuration, OpenAIApi } = require("openai");
 const mongoose = require('mongoose');
+const restrictToLoggedInOnly = require("./middlewares/auth");
 
 const connectionString = process.env.URI;
 
@@ -26,17 +27,14 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 // Import Routes
-const indexRoutes = require('./routes/staticRoutes');
-const trackRoutes = require('./routes/track');
-const recipeRoutes = require('./routes/recipes');
+const staticRoutes = require('./routes/staticRouter');
 const userRoutes = require('./routes/user');
-const restrictToLoggedInOnly = require("./middlewares/auth");
 
 // Use Routes
-app.use('/', indexRoutes);
 app.use('/user', userRoutes);
-app.use('/track', restrictToLoggedInOnly, trackRoutes);
-app.use('/recipes', restrictToLoggedInOnly, recipeRoutes);
+app.use('/', staticRoutes);
+app.use('/track', restrictToLoggedInOnly, staticRoutes);
+app.use('/recipes', staticRoutes);
 
 // Server Listener
 app.listen(3000, function() {
