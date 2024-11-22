@@ -5,12 +5,19 @@ const { setUser } = require('../services/auth');
 async function handleUserSignup(req, res) {
     const { firstName, lastName, email, password } = req.body;
 
-    await User.create({
+    const checkUser = await User.findOne({ email });
+    if(checkUser) return res.send("User already exists.");
+
+    const user = await User.create({
         firstName,
         lastName,
         email,
         password
     })
+    const sessionId = uuidv4();
+    setUser(sessionId, user);
+
+    res.cookie("uid", sessionId);
 
     return res.redirect('/userInfo');
 }

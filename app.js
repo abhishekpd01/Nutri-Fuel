@@ -21,9 +21,10 @@ const openai = new OpenAIApi(new Configuration({
 const app = express();
 
 // Middleware
+app.use(express.static("public"));
+app.set('views', './views');
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
 app.use(cookieParser());
 
 // Import Routes

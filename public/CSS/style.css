@@ -96,116 +96,12 @@ li {
    background-size: cover;
 }
 
-.wrapper{
-   z-index: 999;
-   position: relative;
-   margin-inline: auto;
-   height: 400px;
-   width: 440px;
-   background: transparent;
-   border: 2px solid rgba(255, 255, 255, .5);
-   border-radius: 20px;
-   backdrop-filter: blur(20px);
-   overflow: hidden;
-   transform: scale(0);
-   transition: all .3s;
-   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.wrapper .icon-close{
-   position: absolute;
-   top: 0;
-   right: 0;
-   width: 45px;
-   height: 45px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 2em;
-   cursor: pointer;
-   z-index: 1;
-}
-
-.wrapper.active-pop{
-   transform: scale(1);
-}
-
-.wrapper .sign-up-form-box{
-   width: 100%;
-   padding: 40px;
-}
-
-.sign-up-form-box h2{
-   font-size: 2em;
-   color: white;
-   text-align: center;
-}
-
-.input-box{
-   position: relative;
-   width: 100%;
-   height: 50px;
-   border-bottom: 2px solid rgba(255, 255, 255, 0.865);
-   margin: 30px 0;
-}
-
-.input-box label{
-   position: absolute;
-   top: 50%;
-   left: 5px;
-   transform: translateY(-50%);
-   font-size: 1em;
-   color: white;
-   font-weight: 500;
-   pointer-events: none;
-   transition: .3s;
-}
-
-.input-box input:focus~label,
-.input-box input:valid~label{
-   top: -5px;
-}
-
-.input-box input{
-   width: 100%;
-   height: 100%;
-   background: transparent;
-   border: none;
-   outline: none;
-   font-size: 1em;
-   color: white;
-   font-weight: 600;
-   padding: 0 35px 0 5px ;
-}
-
-.sign-up button{
-   width: 100%;
-   height: 45px;
-   background: white;
-   border: none;
-   border-radius: 6px;
-   font-size: 1em;
-   font-weight: 500;
-   cursor: pointer;
-   transition: ease-in .3s;
-}
-
-.sign-up button:hover{
-   color: white;
-   background: transparent;
-   border: 2px solid white;
-}
-
 .container {
    padding: 5rem;
    width: 60%;
    overflow: hidden;
 
    position: relative;
-   top: -22rem;
 }
 
 .tagline h1{
