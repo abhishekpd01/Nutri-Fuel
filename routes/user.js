@@ -1,5 +1,6 @@
 const express = require("express");
 const { handleUserSignup, handleUserLogin } = require("../controllers/user");
+const openai = require("../config/openaiConfig");
 
 const router = express.Router();
 

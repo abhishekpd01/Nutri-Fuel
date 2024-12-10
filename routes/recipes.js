@@ -1,4 +1,5 @@
 const express = require("express");
+const openai = require("../config/openaiConfig");
 const router = express.Router();
 
 // POST for Recipes

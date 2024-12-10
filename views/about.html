@@ -12,14 +12,17 @@
 <body>
     <div class="navbar">
         <div class="logo"></div>
+        <div class="menu-btn"></div>
         <div class="menu menu-items">
-           <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="About">About</a></li>
-              <li><a href="Contact">Contact</a></li>
-              <li><a href="Session">Sessions</a></li>
-              <li><a href="#">Sign Up</a></li>
-           </ul>
+           <div class="navigation-items">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="About">About</a></li>
+                <li><a href="Contact">Contact</a></li>
+                <li><a href="Session">Sessions</a></li>
+                <li><a href="#">Sign Up</a></li>
+             </ul>
+           </div>
         </div>
     </div>
 
@@ -106,6 +109,16 @@
               </div>
            </div>
         </div>   
-    </section>    
+    </section>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const navigation = document.querySelector('.navigation');
+
+        menuBtn.addEventListener("click", () =>{
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+    </script>
 </body>
 </html>
