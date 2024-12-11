@@ -3,7 +3,7 @@ const openai = require("../config/openaiConfig");
 const router = express.Router();
 
 // POST for Recipes
-router.post("/", async function(req, res) {
+router.post("/cooking-directions", async function(req, res) {
     const recipeName = req.body.recipeName;
 
     try {

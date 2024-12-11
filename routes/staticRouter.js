@@ -35,11 +35,11 @@ router.get("/Session", function(req, res) {
     res.sendFile(path.join(__dirname + "/../views/session.html"));
 });
 
-router.get("/workout", function(req, res) {
+router.get("/TrackWorkout", function(req, res) {
     res.render("trackWorkout", { submitted: false });
 });
 
-router.get("/meal", function(req, res) {
+router.get("/TrackMeal", function(req, res) {
     res.render("trackMeal");
 });
 

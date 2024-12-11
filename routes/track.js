@@ -4,7 +4,7 @@ const router = express.Router();
 
 // POST for trackWorkout
 
-router.post("/workout", async function(req, res) {
+router.post("/TrackWorkout", async function(req, res) {
     const exerciseType = req.body.exerciseType;
     const duration = req.body.duration;
     const intensity = req.body.intensity;
@@ -24,12 +24,7 @@ router.post("/workout", async function(req, res) {
     }
 });
 
-module.exports = router;
-
-
-
-
-// // app.post("/TrackMeal", async function(req, res){
+// router.post("/TrackMeal", async function(req, res){
     
 //     const input = [
 //         "find the macros of the dish - 1 bowl of chicken curry and generate the response as JSON object",
@@ -43,13 +38,23 @@ module.exports = router;
 //         messages.push({role: "user", content: input});
 //     });
 
-//     const gptResponse = await openai.createChatCompletion({
-//         model:"gpt-3.5-turbo",
-//         temperature: 0.1,
-//         messages: messages,
-//     });
-
-//     const result = JSON.parse(gptResponse.data.choices[0].message.content);
-
-//     console.log(result);
+//     try {
+//         const gptResponse = await openai.createChatCompletion({
+//             model:"gpt-3.5-turbo",
+//             temperature: 0.1,
+//             messages: messages,
+//         });
+    
+//         const result = JSON.parse(gptResponse.data.choices[0].message.content);
+    
+//         console.log(result);
+//     } catch (error) {
+//         console.error("Error occurred: ", error);
+//         res.status(error.response.status).send("An error occurred while processing your request. " + error.response.status + ": " + error.response.statusText);
+//     }
 // });
+
+module.exports = router;
+
+
+
