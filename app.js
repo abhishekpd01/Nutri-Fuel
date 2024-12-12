@@ -22,16 +22,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Import Routes
-const staticRoutes = require('./routes/staticRouter');
+const pubicRoutes = require('./routes/publicStaticRoutes');
+const privateRoutes = require('./routes/privateStaticRoutes');
 const userRoutes = require('./routes/user');
-const trackRoutes = require('./routes/track')
-const recipeRoutes = require('./routes/recipes')
+const trackRoutes = require('./routes/track');
+const recipeRoutes = require('./routes/recipes');
 
 // Use Routes
 app.use('/user', userRoutes);
-app.use('/', staticRoutes);
-app.use('/track', restrictToLoggedInOnly, trackRoutes);
-app.use('/recipes', restrictToLoggedInOnly, recipeRoutes);
+app.use('/', pubicRoutes);
+app.use('/', restrictToLoggedInOnly, privateRoutes);
+app.use('/track', trackRoutes);
+app.use('/recipes', recipeRoutes);
 
 // Server Listener
 app.listen(3000, function() {
