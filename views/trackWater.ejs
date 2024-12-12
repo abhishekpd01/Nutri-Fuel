@@ -4,43 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water Filling Counter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
-    }
-    .glass-container {
-      position: relative;
-      width: 150px;
-      height: 300px;
-      border: 2px solid #000;
-      border-top: none;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    .water {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      max-height: 95%;
-      background-color: #00bfff;
-      height: 0;
-      transition: height 0.5s;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="CSS/water.css">
 </head>
 <body>
   <h1>Water Filling Counter</h1>
@@ -50,31 +14,6 @@
   <button onclick="incrementCounter()">Fill Water</button>
   <p id="counter-display">Glass Count: 0</p>
 
-  <script>
-    let counter = 0;
-const maxCount = 6;
-
-function incrementCounter() {
-  if (counter < maxCount) {
-    counter++;
-    const water = document.getElementById('water');
-    const counterDisplay = document.getElementById('counter-display');
-
-    // Update water height (percentage of glass height)
-    const waterHeight = (counter / maxCount) * 100;
-    water.style.height = waterHeight + '%';
-
-    // Update counter display
-    counterDisplay.textContent = `Glass Count: ${counter}`;
-
-    // If glass is full
-    if (counter === maxCount) {
-      alert('The glass is completely filled!');
-    }
-  } else {
-    alert('You have completed your daily quota!');
-  }
-}
-  </script>
+  <script src="JS/script.js"></script>
 </body>
 </html>

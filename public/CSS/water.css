@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.glass-container {
+    position: relative;
+    width: 150px;
+    height: 300px;
+    border: 2px solid #000;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.water {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 95%;
+    background-color: #00bfff;
+    height: 0;
+    transition: height 0.5s;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 10px;
+}

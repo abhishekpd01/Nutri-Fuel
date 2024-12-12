@@ -1,46 +1,51 @@
+// track water JS
+let counter = 0;
+const maxCount = 6;
 
-// sign up form JS
-const wrapper = document.querySelector(".wrapper");
-const btnPop = document.querySelector(".btn-pop");
-const signBtn = document.querySelector(".sign-up-btn");
-const close = document.querySelector(".icon-close");
-const nameField = document.querySelector(".fName");
+function incrementCounter() {
+  if (counter < maxCount) {
+    counter++;
+    const water = document.getElementById('water');
+    const counterDisplay = document.getElementById('counter-display');
 
-btnPop.addEventListener("click", function(){
-  wrapper.classList.add("active-pop");
-});
+    // Update water height (percentage of glass height)
+    const waterHeight = (counter / maxCount) * 100;
+    water.style.height = waterHeight + '%';
 
-signBtn.addEventListener("click", function(){
-  wrapper.classList.add("active-pop");
-});
+    // Update counter display
+    counterDisplay.textContent = `Glass Count: ${counter}`;
 
-close.addEventListener('click',function() {
-  wrapper.classList.remove("active-pop");
-});
-
+    // If glass is full
+    if (counter === maxCount) {
+      alert('The glass is completely filled!');
+    }
+  } else {
+    alert('You have completed your daily quota!');
+  }
+}
 
 // swiper JS
 var swiper = new Swiper(".slide-content", {
-    slidesPreview: 3,
-    spaceBetween: 25,
-    centerSlide: 'true',
-    fade: 'true',
-    gragCursor: 'true',
-    effect: "cube",
-    grabCursor: true,
-    cubeEffect: {
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: 20,
-      shadowScale: 0.8,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+  slidesPreview: 3,
+  spaceBetween: 25,
+  centerSlide: 'true',
+  fade: 'true',
+  gragCursor: 'true',
+  effect: "cube",
+  grabCursor: true,
+  cubeEffect: {
+    shadow: true,
+    slideShadows: true,
+    shadowOffset: 20,
+    shadowScale: 0.8,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    dynamicBullets: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
