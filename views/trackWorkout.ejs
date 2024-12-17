@@ -4,235 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track Workout</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
-
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        :root {
-            --white: #fff;
-        }
-
-        .flex-container{
-            height: 100vh;
-            padding-top: 20px;
-        }
-
-        select {
-            /* Reset Select */
-            appearance: none;
-            outline: 10px red;
-            border: 0;
-            font-size: medium;
-            text-align: center;
-            box-shadow: none;
-            /* Personalize */
-            flex: 1;
-            padding: 0 1em;
-            color: #000;
-            background-color: var(--white);
-            cursor: pointer;
-        }
-        /* Remove IE arrow */
-        select::-ms-expand {
-            display: none;
-        }
-        /* Custom Select wrapper */
-        .input {
-            text-align: center;
-            position: relative;
-            display: flex;
-            width: 16em;
-            height: 3em;
-            border-radius: .25em;
-            filter: drop-shadow(0px 0px 9px rgba(0, 0, 0, 0.25));
-            overflow: hidden;
-        }
-
-        /* Arrow */
-        .select::after {
-            content: '\25BC';
-            position: absolute;
-            top: 0;
-            color: #000;
-            right: 0;
-            padding: 1em;
-            background-color: #fff;
-            transition: .25s all ease;
-            pointer-events: none;
-        }
-
-        /* Transition */
-        .select:hover::after {
-            color: #f39c12;
-        }
-
-        .input input{
-            border: none;
-            outline: none;
-            font-size: medium;
-            text-align: center;
-            background-color: #fff;
-            padding: 0 1em;
-            display: flex;
-            flex: 1;
-            border-radius: .25em;
-        }
-
-        .input input::placeholder{
-            color: #000;
-        }
-
-        .content{
-            display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-        }
-
-        .track-btn{
-            display: flex;
-            align-items: center;
-        }
-
-        .track-btn button{
-            width: 5em;
-            height: 2.75em;
-            border: none;
-            border-radius: 8px;
-            background: #DCB780;
-            color: white;
-            cursor: pointer;
-            transition: .25s ease-in;
-        }
-
-        .track-btn button:hover{
-            background: #b89b70;
-        }
-
-        .content-display{
-            margin-top: 80px;
-            display: flex;
-            padding: 10px 60px 10px;
-        }
-        .circle{
-            height: 300px;
-            width: 300px;
-            display: grid;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            justify-items: center;
-            border-radius: 50%;
-            border: 9px solid #DCB780;
-            background: #FFF;
-            box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.25);
-        }
-        .circle-container{
-            width: 30%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .cal-img{
-            height: 10rem;
-            width: 10rem;
-            text-align: center;
-            font-size: 29.97px;
-            line-height: 120.188%;
-            letter-spacing: 1.458px;
-            color: #DCB780;
-            display: grid;
-            justify-content: center;
-        }
-
-        .cal-img img{
-            height: 9rem;
-        }
-
-        .calories{
-            font-size: 2rem;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        .tips{
-            /* background: yellow; */
-            width: 70%;
-        }
-
-        .gpt-response{
-            padding: 32px;
-            width: 90vh;
-            height: 65vh;
-            font-size: 17px;
-            display: grid;
-            align-content: space-between;
-            align-items: stretch;
-            overflow-x: hidden;
-            overflow-y: auto;
-            text-align: justify;
-            margin-inline: auto;
-            border-radius: 30px;
-            box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.25);
-        }
-
-        .gpt-response h1{
-            font-weight: 500;
-        }
-
-        .gpt-response ul{
-            list-style-type: square;
-        }
-
-        .gpt-response::-webkit-scrollbar{
-            width: 5px;
-        }
-        .gpt-response::-webkit-scrollbar-track{
-            -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.3); 
-            border-radius:5px;
-        }
-        .gpt-response::-webkit-scrollbar-thumb{
-            border-radius:5px;
-            -webkit-box-shadow: inset 0 0 6px red; 
-        }
-
-        .redirectBtn{
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: flex-end;
-        }
-
-        .redirectBtn button{
-            cursor: pointer;
-            height: 41px;
-            width: 126px;
-            border-radius: 5px;
-            border: none;
-            font-size: 1em;
-            font-family: roboto;
-            background: #DCB780;
-            color: white;
-            transition: .5s;
-        }
-
-        .redirectBtn button:hover{
-            background: #b89b70;
-        }
-    </style>
-
+    <link rel="stylesheet" href="CSS/workout.css">
 </head>
 <body>
     <div class="flex-container">
-        <div class="container">
-            <form action="/track/TrackWorkout" method="post">
-                <div class="content">
-                    
+        <form action="/track/TrackWorkout" method="post">
+            <div class="content">
+                
+                <div class="input-container">
                     <div class="input">
                         <input type="text" required placeholder="Exercise Type" name="exerciseType">
                     </div>
@@ -249,13 +28,13 @@
                             <option value="high">High</option>
                         </select>
                     </div>
-                    
-                    <div class="track-btn">
-                        <button type="submit">Track</button>
-                    </div>
                 </div>
-            </form>
-        </div>
+                
+                <div class="track-btn">
+                    <button type="submit">Track</button>
+                </div>
+            </div>
+        </form>
         <% if(submitted){ %>
         <div class="content-display">
             <div class="circle-container">
@@ -286,30 +65,5 @@
     </div>
 </body>
 
-<script>
-    const animationContainer = document.getElementsByClassName("calories")[0];
-
-    let startTime = Date.now();
-    const duration = 1000; // 2 seconds
-    const endValue = parseInt(document.getElementsByClassName("calories")[0].innerHTML, 10);
-
-    function updateNumber() {
-        const currentTime = Date.now();
-        const elapsedTime = currentTime - startTime;
-
-        if (elapsedTime < duration) {
-            // Generate a random number between 0 and 399
-            const randomNumber = Math.floor(Math.random() * 400);
-            animationContainer.textContent = randomNumber;
-            requestAnimationFrame(updateNumber);
-        } else {
-            // Animation duration has passed, display "400"
-            animationContainer.textContent = endValue;
-        }
-    }
-
-    window.onload = function(){
-        updateNumber();
-    }
-</script>
+<script src="JS/trackWorkout.js"></script>
 </html>
