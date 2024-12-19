@@ -1,18 +1,19 @@
 // jshint esversion:6
 
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
-const dotenv = require("dotenv").config();
 const mongoose = require('mongoose');
 const restrictToLoggedInOnly = require("./middlewares/auth");
+
+// Initialize Express
+const app = express();
+const PORT = process.env.PORT || 8000;
 
 const connectionString = process.env.URI;
 
 mongoose.connect(connectionString + "userAuthentication");
-
-// Initialize Express
-const app = express();
 
 // Middleware
 app.use(express.static("public"));
@@ -36,6 +37,6 @@ app.use('/track', trackRoutes);
 app.use('/recipes', recipeRoutes);
 
 // Server Listener
-app.listen(3000, function() {
-    console.log("The server is up and running on port 3000");
+app.listen(PORT, function() {
+    console.log(`The server is up and running 🏃 on port ${PORT}`);
 });
