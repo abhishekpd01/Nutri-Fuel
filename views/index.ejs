@@ -13,6 +13,22 @@
 
    <!-- Swiper CSS -->
    <link rel="stylesheet" href="CSS/cdn.jsdelivr.net_npm_swiper@10.0.4_swiper-bundle.min.css">
+
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    .animate-on-scroll {
+        opacity: 0; /* Initial state before animation */
+        transform: translateY(20px); /* Slight offset for better effect */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .visible {
+        opacity: 1; /* Fully visible during animation */
+        transform: translateY(0); /* Reset offset */
+    }
+  </style>
 </head>
 <body>
 
@@ -31,7 +47,7 @@
       </div>
 
       <div class="container">
-         <div class="tagline">
+         <div class="tagline animate-on-scroll" data-animation="animate__fadeInUp">
             <h1>This is a Tagline Added Later</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, repellendus.</p>
          </div>
@@ -46,14 +62,14 @@
 
       <div class="features">
          <div class="features-box">
-            <div class="content box1">
+            <div class="content box1 animate-on-scroll" data-animation="animate__fadeInLeft">
                <div class="head">
                   <h2>Custom Fitness Plan</h2>
                   <div class="icon-fitness"></div>
                </div>
                <p>Personalized Nutrition and Fitness Programs tailored to your needs and objectives.</p>
             </div>
-            <div class="content box2">
+            <div class="content box2 animate-on-scroll" data-animation="animate__fadeInLeft">
                <div class="head">
                   <h2>Health Insights</h2>
                   <div class="icon-insights"></div>
@@ -62,7 +78,7 @@
             </div>
             
          </div>
-         <div class="features-box content2">
+         <div class="features-box content2 animate-on-scroll" data-animation="animate__fadeInRight">
             <div class="head">
                <h2>Excellent Trainers</h2>
                <div class="icon-trainers"></div>
@@ -77,13 +93,13 @@
     <div class="btn-wrapper">
         <h1>Track your Activity</h1>
         <div class="tracker-row row1">
-            <a href="/TrackWorkout">
+            <a href="/TrackWorkout" class="animate-on-scroll" data-animation="animate__bounceIn">
                 <div class="tracker tracker1"> 
                     <div class="img"><img src="Assets/calorie.png" alt="not found" height="115px" width="115px"></div>
                     <h2>Track Workout</h2>
                 </div>
             </a>
-            <a href="/TrackMeal">
+            <a href="/TrackMeal" class="animate-on-scroll" data-animation="animate__bounceIn">
                 <div class="tracker tracker2"> 
                     <div class="img"><img src="Assets/meal.png" alt="not found" height="115px" width="115px"></div>
                     <h2>Track Meal</h2> 
@@ -91,13 +107,13 @@
             </a>
         </div>
         <div class="tracker-row row2">
-            <a href="/water">
+            <a href="/water" class="animate-on-scroll" data-animation="animate__bounceIn">
                 <div class="tracker tracker3">
                     <div class="img"><img src="Assets/water.png" alt="not found" height="115px" width="115px"></div>
                     <h2>Track Water</h2> 
                 </div>
             </a>
-            <a href="/recipes">
+            <a href="/recipes" class="animate-on-scroll" data-animation="animate__bounceIn">
                 <div class="tracker tracker4">
                     <div class="img"><img src="Assets/recipe.png" alt="not found" height="115px" width="115px"></div>
                     <h2>Recipes</h2>

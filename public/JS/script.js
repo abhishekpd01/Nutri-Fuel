@@ -49,3 +49,17 @@ var swiper = new Swiper(".slide-content", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+
+// Page Load Animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            const animation = entry.target.dataset.animation;
+            entry.target.classList.add('visible', 'animate__animated', animation);
+        }
+    })
+});
+// Select all elements to animate
+const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+elementsToAnimate.forEach((element) => observer.observe(element));

@@ -285,11 +285,12 @@ li {
 .session-booking{
    margin-top: 100px;
    margin-bottom: 100px;
+   height: 100vh;
 }
 
 .bookNow{
    width: 50%;
-   height: 1037px;
+   height: 100%;
    padding-inline: 75px;
    display: grid;
    grid-template-rows: 0px;
@@ -300,7 +301,7 @@ li {
 .online-session{
    background-color: #40513B;
    width: 90%;
-   height: 1037px;
+   height: 100%;
    margin-inline: auto;
    display: flex;
    color: #FFF;
