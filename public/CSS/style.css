@@ -27,7 +27,7 @@ body{
    background: url(/Assets/logo.png) no-repeat;
    background-size: 13rem;
    background-position: center;
-   width: 10%;
+   width: 20%;
    height: 90px;
 }
 
@@ -105,14 +105,14 @@ li {
 }
 
 .tagline h1{
-   font-size: 68px;
+   font-size: 5vw;
    font-weight: 400;
    color: white;
 }
 
 .tagline p{
    font-weight: 100;
-   font-size: 36px;
+   font-size: 2.8vw;
    color: white;
 }
 
@@ -144,6 +144,11 @@ li {
    margin-top: 50px;
    text-align: center;
    font-size: 50px;
+}
+
+.heading h1 {
+   font-size: 7.2vw;
+   font-weight: 600;
 }
 
 .features{
@@ -203,11 +208,15 @@ li {
    height: 50px;
 }
 
+.trainers-image img {
+   height: 288px;
+}
+
 /* trackers section */
 
 .trackers{
    margin-top: 100px;
-   margin-bottom: 200px;
+   margin-bottom: 100px;
    height: 100vh;
 }
 
@@ -219,7 +228,7 @@ li {
 
 .btn-wrapper h1{
    font-weight: 400;
-   font-size: 55px;
+   font-size: 7.2vw;
    text-align: center;
 }
 
@@ -275,6 +284,7 @@ li {
 
 .tracker-row{
    display: flex;
+   flex-wrap: wrap;
    justify-content: center;
    align-items: center;
    width: 100%;
@@ -283,7 +293,7 @@ li {
 /* booking section */
 
 .session-booking{
-   margin-top: 100px;
+   margin-top: 200px;
    margin-bottom: 100px;
    height: 100vh;
 }
@@ -309,11 +319,11 @@ li {
 
 .online-session h1{
    font-weight: 400;
-   font-size: 55px;
+   font-size: 3rem;
 }
 
 .online-session p{
-   font-size: 25px;
+   font-size: 1.6rem;
    font-weight: 100;
 }
 
@@ -344,7 +354,7 @@ li {
 
 .image{
    background: url(/Assets/pexels-anna-shvets-6593720.jpg);
-   background-position: 36rem;
+   background-position: right;
    background-repeat: no-repeat;
    background-size: 44rem;
    background-attachment: fixed;
@@ -363,7 +373,7 @@ li {
 }
 .customers h1{
    font-weight: 400;
-   font-size: 55px;
+   font-size: 7.2vw;
 }
 
 .slide-container{
@@ -504,12 +514,13 @@ li {
 /* footer CSS */
 
 .footer{
-   background: #40513B;
-   width: 90%;
-   margin-inline: auto;
+   width: 100%;
 }
 
 .footer-content{
+   background: #40513B;
+   width: 90%;
+   margin-inline: auto;
    display: flex;
    justify-content: space-evenly;
 }
@@ -578,13 +589,22 @@ li {
 
 .contact-form h2{
    text-align: center;
+   font-size: xx-large;
    font-weight: 500;
    color: #FFF;
 }
 .contact-form{
    padding: 20px;
+   width: 100%;
 }
+
+.form-container form {
+   width: 80%;
+   display: grid;
+}
+
 .contact-form textarea{
+   border: 1.5px solid #FFF;
    width: -webkit-fill-available;
    height: 115px;
    padding-inline: 8px;
@@ -594,6 +614,8 @@ li {
 }
 
 .contact-form input{
+   border: none;
+   border-bottom: 1.5px solid #FFF;
    width: 213px;
    height: 38px;
    padding-inline: 8px;
@@ -602,15 +624,18 @@ li {
 }
 
 .contact-form textarea,input{
-   border: 1.5px solid #FFF;
    background: transparent;
    border-radius: 2px;
    color: white;
+   width: 100%;
+   outline: none;
 }
 
 .name-info,
 .contact-info{
    display: flex;
+   flex-wrap: wrap;
+   align-items: center;
    justify-content: space-between;
 }
 
@@ -636,4 +661,204 @@ input::placeholder{
    border: 2px solid;
    background-color:#40513B ;
    border-color: white;
+}
+
+
+@media (max-width: 1040px) {
+   *{
+      transition: 0.5s ease;
+   }
+   .navbar {
+      transition: 0.5s ease;
+      padding: 0px 20px;
+      top: 0;
+      width: 100%;
+   }
+
+   .logo {
+      position: absolute;
+      /* left: -40px; */
+   }
+
+   .container {
+      padding: 2rem;
+      padding-top: 6rem;
+      width: 80%;
+      overflow: hidden;
+      position: relative;
+   }
+
+   .tagline h1 {
+      font-size: 3rem;
+      font-weight: 400;
+      color: white;
+   }
+
+   .tagline p {
+      font-weight: 100;
+      font-size: 1.5rem;
+      color: white;
+   }
+
+   .features {
+      display: grid;
+      width: 100%;
+      transition: 0.5s ease;
+      font-size: medium;
+   }
+
+   .features-box {
+      margin: 20px;
+      width: 60%;
+      margin-inline: auto;
+   }
+
+   .head h2 {
+      font-size: large;
+   }
+
+   .head p {
+      font-size: 1.4rem;
+   }
+
+   .trainers-image img{
+      height: 20vh;
+   }
+
+   .icon-fitness {
+      background-size: 3.2rem;
+      width: 40px;
+      height: 40px;
+   }
+
+   .trackers {
+      height: 50vh;
+      margin-bottom: 0px;
+   }
+
+   .tracker-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-wrap: wrap;
+   }
+
+   .tracker {
+      height: 12vh;
+      width: 12vh;
+   }
+
+   .tracker h2 {
+      font-size: smaller;
+   }
+
+   .img img {
+      height: 5vh;
+      width: 5vh;
+   }
+
+   .session-booking {
+      margin-top: 0px;
+   }
+
+   .online-session {
+      display: flex;
+      width: 100%;
+      flex-direction: column-reverse;
+   }
+
+   .online-session h1 {
+      font-size: xx-large;
+   }
+   .online-session p {
+      font-size: 1.4rem;
+   }
+   .online-session button {
+      height: 3rem;
+   }
+
+   .session-image {
+      width: 100%;
+      height: 50%;
+   }
+
+   .image {
+      background-position: center;
+      /* background-position-y: -15rem; */
+      background-size: cover;
+      background-attachment: scroll;
+      height: 100%;
+      width: 100%;
+   }
+
+   .bookNow {
+      width: 100%;
+      height: 50%;
+      padding-inline: 75px;
+      display: grid;
+      grid-template-rows: 0px;
+      grid-row-gap: 0px;
+      align-content: space-evenly;
+      align-items: center;
+   }
+
+   .slide-container {
+      width: 22rem;
+   }
+
+   /* .gallery-container {
+      display: grid;
+      justify-content: space-evenly;
+      align-items: stretch;
+      justify-items: center;
+      align-content: space-evenly;
+   } */
+   .image-gallery {
+      display: none;
+   }
+
+   .footer-content {
+      transition: 0.5s ease-in-out;
+      display: grid;
+      justify-content: space-evenly;
+      align-content: stretch;
+      justify-items: center;
+      width: 100%;
+   }
+
+   .footer-content img {
+      margin-bottom: 15px;
+      left: 0px;
+   }
+
+   .nav-links {
+      width: 100%;
+      display: grid;
+      justify-content: start;
+      align-items: center;
+      justify-items: start;
+      align-content: center;
+   }
+
+   .form-container form {
+      width: inherit;
+      display: block;
+   }
+
+   .name-info, .contact-info {
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .contact-form input {
+      margin-bottom: 15px;
+      width: 80vw;
+   }
+
+   .contact-form button {
+      width: 100%;
+   }
 }
