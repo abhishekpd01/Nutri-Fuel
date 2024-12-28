@@ -420,6 +420,10 @@ input::placeholder{
       background: #EDF1D6;
    }
 
+   .menu-items li a[href="Contact"] {
+      display: none;
+  }
+
 /* footer */
 .footer-content {
       transition: 0.5s ease-in-out;

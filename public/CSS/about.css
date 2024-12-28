@@ -401,6 +401,10 @@ body{
    background: #EDF1D6;
    }
 
+   .menu-items li a[href="Contact"] {
+      display: none;
+  }
+
    .heading h1 {
       font-size: -webkit-xxx-large;
    }

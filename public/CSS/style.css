@@ -738,6 +738,10 @@ input::placeholder{
       background: #EDF1D6;
    }
 
+   .menu-items li a[href="Contact"] {
+      display: none;
+  }
+
    .container {
       padding: 2rem;
       padding-top: 6rem;

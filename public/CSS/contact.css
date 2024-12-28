@@ -177,7 +177,8 @@ form textarea{
 }
 
 form textarea,input{
-   border: 1.5px solid #FFF;
+   border: none;
+   border-bottom: 1.5px solid #FFF;
    background: transparent;
    border-radius: 2px;
    color: white;
@@ -356,125 +357,4 @@ input::placeholder{
    border: 2px solid;
    background-color:#40513B ;
    border-color: white;
-}
-
-@media (max-width: 1040px) {
-
-   /* navbar */
-*{
-      transition: 0.5s ease;
-   }
-   .navbar {
-      transition: 0.5s ease;
-      padding: 0px 20px;
-      top: 0;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-   }
-
-   .logo {
-      position: relative;
-      top: 6px;
-   }
-
-   .menu {
-      position: relative;
-      display: none;
-   }
-
-   .menu-btn {
-      background: url(/Assets/menu.png) no-repeat;
-      background-size: 30px;
-      background-position: center;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      transition: 0.3s ease;
-   }
-
-   .menu-btn.active {
-      z-index: 1000;
-      transform: rotate(180deg);
-      background: url(/Assets/close.png) no-repeat;
-      background-size: 25px;
-      background-position: center;
-      transition: 0.3s ease;
-   }
-
-   .menu.active {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(1, 1, 1, 0.5);
-   }
-
-   .navbar .menu-items a {
-      color: #EDF1D6;
-      font-size: x-large;
-      margin-left: 0px;
-   }
-
-   .menu ul {
-      display: grid;
-      background: #40513B;
-      justify-items: center;
-      align-items: center;
-      justify-content: space-evenly;
-      width: 50rem;
-   }
-
-   .navbar .menu-items a:before {
-      background: #EDF1D6;
-   }
-
-/* footer */
-.footer-content {
-      transition: 0.5s ease-in-out;
-      display: grid;
-      justify-content: space-evenly;
-      align-content: stretch;
-      justify-items: center;
-      width: 100%;
-   }
-
-   .footer-content img {
-      margin-bottom: 15px;
-      left: 0px;
-   }
-
-   .nav-links {
-      width: 100%;
-      display: grid;
-      justify-content: start;
-      align-items: center;
-      justify-items: start;
-      align-content: center;
-   }
-
-   .form-container form {
-      width: inherit;
-      display: block;
-   }
-
-   .name-info, .contact-info {
-      display: grid;
-      justify-items: center;
-      align-items: center;
-      justify-content: center;
-   }
-
-   .contact-form input {
-      margin-bottom: 15px;
-      width: 80vw;
-   }
-
-   .contact-form button {
-      width: 100%;
-   }
 }
