@@ -405,6 +405,10 @@ body{
       display: none;
   }
 
+   .link li a[href="Contact"] {
+      display: none;
+  }
+
    .heading h1 {
       font-size: -webkit-xxx-large;
    }
