@@ -16,15 +16,15 @@ router.get("/", function(req, res) {
 });
 
 router.get("/About", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../views/about.html"));
+    res.render('about');
 });
 
 router.get("/Contact", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../views/contact.html"));
+    res.render('contact');
 });
 
 router.get("/Session", function(req, res) {
-    res.sendFile(path.join(__dirname + "/../views/session.html"));
+    res.render('session');
 });
 
 module.exports = router;

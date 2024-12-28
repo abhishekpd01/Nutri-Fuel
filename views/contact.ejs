@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/CSS/contact.css">
+
+    <!-- social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+   <%- include("partials/navbar") %>
+
+    <section class="contact-header">
+        <div class="container">
+            <div class="heading">
+                <span>Contact us</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-form-box">
+            <div class="image-box"></div>
+            <div class="form-box">
+                <h1>Get in Touch With Us</h1>
+                <div class="form-container">
+                    <form action="#">
+                       <div class="name-info">
+                          <input type="text" placeholder="First Name" required>
+                          <input type="text" placeholder="Last Name" required>
+                       </div><br/><br/>
+                       <div class="contact-info">
+                          <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                          <input type="email" placeholder="Email Address" required>
+                       </div><br/><br/>
+                       <div class="message">
+                          <textarea rows="4" cols="50" placeholder="Message..." required></textarea>
+                       </div><br>   
+        
+                       <button id="submitBtn">Submit</button>
+                    </form>
+              </div>
+            </div>
+        </div>
+    </section>
+    
+   <%- include("partials/footer") %>
+
+   </body>
+</html>
+
+<script src="/JS/script.js"></script>
