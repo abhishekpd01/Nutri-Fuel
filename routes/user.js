@@ -34,7 +34,7 @@ router.post("/userInfo", async function(req, res) {
         });
     } catch (error) {
         console.error("Error occured: ", error);
-        res.status(error.response.status).send("An error occurred while processing your request. " + error.response.status + ": " + error.response.statusText);
+        res.status(error.response.status).render("error");
     }
 });
 

@@ -25,7 +25,7 @@ router.post("/cooking-directions", async function(req, res) {
         });
     } catch (error) {
         console.error("Error occurred: ", error);
-        res.status(error.response.status).send("An error occurred while processing your request. " + error.response.status + ": " + error.response.statusText);
+        res.status(error.response.status).render("error");
     }
 });
 

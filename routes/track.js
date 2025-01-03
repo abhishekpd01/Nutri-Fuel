@@ -20,7 +20,7 @@ router.post("/TrackWorkout", async function(req, res) {
         res.render("trackWorkout", { submitted: true, calorieBurned: result.total_calorie_burned, Tips: result.tips });
     } catch (error) {
         console.error("Error occurred: ", error);
-        res.status(error.response.status).send("An error occurred while processing your request. " + error.response.status + ": " + error.response.statusText);
+        res.status(error.response.status).render("error");
     }
 });
 
@@ -50,7 +50,7 @@ router.post("/TrackWorkout", async function(req, res) {
 //         console.log(result);
 //     } catch (error) {
 //         console.error("Error occurred: ", error);
-//         res.status(error.response.status).send("An error occurred while processing your request. " + error.response.status + ": " + error.response.statusText);
+//         res.status(error.response.status).render("error");
 //     }
 // });
 
