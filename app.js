@@ -11,9 +11,15 @@ const restrictToLoggedInOnly = require("./middlewares/auth");
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-const connectionString = process.env.URI;
-
-mongoose.connect(connectionString + "userAuthentication");
+// Connect to MongoDB
+try {
+    const connectionString = process.env.URI;
+    
+    mongoose.connect(connectionString + "userAuthentication");
+    console.log("MongoDB Connection established");
+} catch (error) {
+    console.log("Error connecting to MongoDB");
+}
 
 // Middleware
 app.use(express.static("public"));
