@@ -461,6 +461,7 @@ input::placeholder{
 
    .card-image, .card {
       width: 100%;
+      background-position: center;
    }
 
 /* footer */
