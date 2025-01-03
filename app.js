@@ -18,7 +18,7 @@ try {
     mongoose.connect(connectionString + "userAuthentication");
     console.log("MongoDB Connection established");
 } catch (error) {
-    console.log("Error connecting to MongoDB");
+    console.log("Error connecting to MongoDB", error);
 }
 
 // Middleware
