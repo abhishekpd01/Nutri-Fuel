@@ -27,7 +27,7 @@
     letter-spacing: 1px;
 }
 
-span input[type=text]{
+span input[type=text], input[type=number]{
     height: 80px;
     width: 85%;
     text-align: center;
@@ -45,22 +45,28 @@ span input[type=text]{
 
 span input[type=radio]{
     appearance: none;
+    height: 230px;
+    width: 230px;
 }
 
-.gender{
-    background-color: transparent;
+.gender {
     border: none;
     height: 230px;
     width: 230px;
 }
 
-/* .active{
-    background-color: transparent;
-    border: 2px solid #9DC08B;
-    border-radius: 5px;
-    height: 230px;
-    width: 230px;
-} */
+.gender:nth-child(1){
+    background: url("/Assets/male.png") no-repeat;
+    margin-bottom: 1.3em;
+    background-size: 8em;
+    background-position: center;
+    
+}
+.gender:nth-child(2){
+    background: url("/Assets/female.png") no-repeat;
+    background-size: 8em;
+    background-position: center;
+}
 
 span input[type=radio]:hover{
     cursor: pointer;
@@ -127,4 +133,53 @@ span input::placeholder{
 
 .nextStyle button:hover{
     background: #488f55;
+}
+
+@media (max-width: 1040px) {
+    .swiper-slide h1{
+        font-size: 4em;
+    }
+    .swiper-slide h2{
+        font-size: 2em;
+    }
+    span input[type=text], input[type=number] {
+        font-size: 1.4em;
+    }
+    span input[type=text]::placeholder, input[type=number]::placeholder {
+        font-size: 1em;
+    }
+    .nav-btn{
+        flex-direction: column-reverse;
+    }
+    .gender-selection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    span input[type=radio]{
+        appearance: none;
+        height: 10em;
+        width: 15em;
+    }
+
+    span input[type=radio]:hover{
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid #9DC08B;
+        border-radius: 5px;
+        height: 10em;
+        width: 15em;
+    }
+    
+    span input[type=radio]:checked{
+        background-color: transparent;
+        border: 2px solid #9DC08B;
+        border-radius: 5px;
+        height: 10em;
+        width: 15em;
+    }
+
+    .back {
+        margin-top: 10px;
+    }
 }
