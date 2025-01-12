@@ -2,9 +2,9 @@
 
 require("dotenv").config();
 const express = require("express");
+const connectToDB = require("./config/connectDB");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
-const mongoose = require('mongoose');
 const restrictToLoggedInOnly = require("./middlewares/auth");
 const { sessionMiddleware, passUserMiddleware } = require("./middlewares/passUser");
 
@@ -13,14 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 // Connect to MongoDB
-try {
-    const connectionString = process.env.URI;
-    
-    mongoose.connect(connectionString + "userAuthentication");
-    console.log("MongoDB Connection established");
-} catch (error) {
-    console.log("Error connecting to MongoDB", error);
-}
+connectToDB();
 
 // Middleware
 app.use(express.static("public"));
