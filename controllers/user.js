@@ -15,6 +15,7 @@ async function handleUserSignup(req, res) {
     })
     const token = setUser(user);
 
+    req.session.user = { userName : user.firstName};
     res.cookie("uid", token);
 
     return res.redirect('/userInfo');
@@ -30,8 +31,12 @@ async function handleUserLogin(req, res) {
 
     const token = setUser(user);
 
+    req.session.user = { userName : user.firstName};
+    console.log('req.session.user:', req.session.user.userName); // Debugging
+    
     res.cookie("uid", token);
 
+    
     return res.redirect('/');
 }
 

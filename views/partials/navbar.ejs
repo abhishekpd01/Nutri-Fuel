@@ -7,7 +7,19 @@
             <li><a href="About">About</a></li>
             <li><a href="Contact">Contact</a></li>
             <li><a href="Session">Sessions</a></li>
-            <li class="btn-pop"><a href="signup">SignUp/Login</a></li>
+            <!-- <li class="btn-pop"><a href="signup">SignUp/Login</a></li> -->
+            <% if (userName) { %>
+                <li class="btn-pop"><a href="profile"><%= userName.userName %></a></li>
+                <!-- <li class="btn-pop">
+                    <select name="logout" id="logout">
+                        <option selected hidden><%= userName.userName %></option>
+                        <option value="low"><button href="profile">Logout</button></option>
+                    </select>
+                </li> -->
+            <% } else { %>
+                <li class="btn-pop"><a href="signup">Sign Up</a></li>
+            <% } %>
+
            </ul>
        </div>
  </div>
