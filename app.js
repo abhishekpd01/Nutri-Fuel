@@ -6,7 +6,7 @@ const connectToDB = require("./config/connectDB");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser');
 const restrictToLoggedInOnly = require("./middlewares/auth");
-const { sessionMiddleware, passUserMiddleware } = require("./middlewares/passUser");
+const passUser = require("./middlewares/passUser");
 
 // Initialize Express
 const app = express();
@@ -21,8 +21,7 @@ app.set('views', './views');
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(sessionMiddleware);
-app.use(passUserMiddleware);
+app.use(passUser);
 
 // Import Routes
 const pubicRoutes = require('./routes/publicStaticRoutes');
