@@ -9,6 +9,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
+router.get('/logout', (req, res) => {
+    res.clearCookie("uid");
+    return res.redirect('/');
+})
+
 router.get("/", function(req, res) {
     res.render("index");
 });
