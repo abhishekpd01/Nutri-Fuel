@@ -11,6 +11,7 @@
   "author": "Abhishek Prasad",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.3.1",
