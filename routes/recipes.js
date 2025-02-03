@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/cooking-directions", async function(req, res) {
     const recipeName = req.body.recipeName;
     
-    const prompt = `tell me chocolate cake recipe, return the response as json object having keys strictly as 'recipeName', 'description', 'ingredients', 'instructions' and 'tips' and nothing else. 
+    const prompt = `tell me ` + recipeName + ` recipe, return the response as json object having keys strictly as 'recipeName', 'description', 'ingredients', 'instructions' and 'tips' and nothing else. 
     For Example:
     {
     "recipeName": "Matar Paneer",
@@ -47,28 +47,33 @@ router.post("/cooking-directions", async function(req, res) {
     
     try {
         const result = await openai.model.generateContent(prompt);
-        const response = await result.response;
-        const text = await response.text();
+        const response = result.response;
+        const text = response.text();
     
         // Extract JSON content from the text
         const match = text.match(/\{[^{}]*\}/);
 
         const cleanedText = match[0];
     
-        const jsonResponse = JSON.parse(cleanedText); // Use the cleaned text for parsing
-        console.log(jsonResponse);
-    
-        res.render("recipes", {
-            submitted: true,
-            Name: jsonResponse.recipeName,
-            Description: jsonResponse.description,
-            Ingredients: jsonResponse.ingredients,
-            Instructions: jsonResponse.instructions,
-            Tips: jsonResponse.tips
-        });
+        try {
+            const jsonResponse = JSON.parse(cleanedText);// Use the cleaned text for parsing
+            // console.log(jsonResponse);       //for debugging
+        
+            res.render("recipes", {
+                submitted: true,
+                Name: jsonResponse.recipeName,
+                Description: jsonResponse.description,
+                Ingredients: jsonResponse.ingredients,
+                Instructions: jsonResponse.instructions,
+                Tips: jsonResponse.tips
+            });
+        } catch (error) {
+            console.log(error);
+            res.status(500).render("error")
+        }
     } catch (error) {
         console.error("Error occurred: ", error);
-        res.status(error.response.status).render("error");
+        res.status(500).render("error");
     }
 });
 
