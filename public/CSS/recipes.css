@@ -145,3 +145,20 @@
 .redirectBtn button:hover{
     background: #CECE5A;
 }
+
+@media (max-width: 1040px) {
+    .recipe {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        padding: 15px;
+    }
+
+    .recipe-input {
+        height: 60vh;
+    }
+
+    .redirectBtn {
+        width: 100%;
+    }
+}
