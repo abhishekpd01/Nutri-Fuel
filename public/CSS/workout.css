@@ -166,7 +166,6 @@ select::-ms-expand {
 }
 
 .tips{
-    /* background: yellow; */
     width: 70%;
 }
 
@@ -227,4 +226,38 @@ select::-ms-expand {
 
 .redirectBtn button:hover{
     background: #b89b70;
+}
+
+@media (max-width: 1040px) {
+    .content-display {
+        display: grid;
+        align-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .circle-container{
+        width: 100%;
+    }
+
+    .circle {
+        height: 15em;
+        width: 15em;
+    }
+
+    .tips{
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .gpt-response{
+        width: 16em;
+        height: 48em;
+    }
+
+    .redirectBtn{
+        justify-content: center;
+    }
 }
