@@ -4,16 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water Filling Counter</title>
-  <link rel="stylesheet" href="CSS/water.css">
+  <link rel="stylesheet" href="/CSS/water.css">
 </head>
 <body>
-  <h1>Water Filling Counter</h1>
-  <div class="glass-container">
-    <div class="water" id="water"></div>
+  <div class="counter-section">
+    <div class="container">
+      <div class="counter-container">
+        <button id="decrement" class="button">-</button>
+        <div class="counter">
+          <span id="counter-value">0</span>
+        </div>
+        <button id="increment" class="button">+</button>
+      </div>
+    </div>
   </div>
-  <button onclick="incrementCounter()">Fill Water</button>
-  <p id="counter-display">Glass Count: 0</p>
 
-  <script src="JS/script.js"></script>
+  <div class="tip-section" id="tip-section">
+    <label for="tip-section">Facts</label>
+    <% Facts.forEach( function(facts) { %>
+      <p><%= facts %></p>
+    <% }); %>
+  </div>
+
+  <a href="/"><button id="go-home" class="home-button">Go Home</button></a>
+
 </body>
 </html>
+
+<script>
+  const counterValue = document.getElementById("counter-value");
+  const incrementButton = document.getElementById("increment");
+  const decrementButton = document.getElementById("decrement");
+
+  let count = 0;
+
+  incrementButton.addEventListener("click", () => {
+    if (count < 12) {
+      count++;
+      counterValue.textContent = count;
+    } else {
+      alert("You have completed your daily goal!");
+    }
+  });
+
+  decrementButton.addEventListener("click", () => {
+    if (count > 0) {
+      count--;
+      counterValue.textContent = count;
+    }
+  });
+
+</script>
