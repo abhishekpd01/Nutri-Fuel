@@ -7,7 +7,17 @@
 </head>
 <body>
     <form action="/track/TrackMeal" method="post">
+        <input type="text" name="dishName" placeholder="Dish Name">
+        <input type="number" name="seervings" placeholder="Amount">
         <button type="submit">go</button>
     </form>
+    <% if(submitted) { %>
+        <p><%= cal %></p>
+        <p><%= protein %></p>
+        <p><%= fat %></p>
+        <p><%= carb %></p>
+        <p><%= fiber %></p>
+        <p><%= notes %></p>
+    <% } %>
 </body>
 </html>

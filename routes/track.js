@@ -52,35 +52,55 @@ router.post("/TrackWorkout", async function(req, res) {
     }
 });
 
-// router.post("/TrackMeal", async function(req, res){
-    
-//     const input = [
-//         "find the macros of the dish - 1 bowl of chicken curry and generate the response as JSON object",
-//         "find the macros of the dish - 1 bowl of matar paneer and generate the response as JSON object",
-//         "find the macros of the dish - 1 bowl of fish curry and generate the response as JSON object",
-//     ];
+router.post("/TrackMeal", async function(req, res){
 
-//     const messages = [];
+    const { dishName, servings } = req.body;
 
-//     input.forEach((input) => {
-//         messages.push({role: "user", content: input});
-//     });
+    const prompt = `Provide *estimated* macros for ${dishName}, serving ${servings}, return the response in JSON format with keys strictly as calories, protein, fat, carb, fiber, notes.
+For example:
 
-//     try {
-//         const gptResponse = await openai.createChatCompletion({
-//             model:"gpt-3.5-turbo",
-//             temperature: 0.1,
-//             messages: messages,
-//         });
-    
-//         const result = JSON.parse(gptResponse.data.choices[0].message.content);
-    
-//         console.log(result);
-//     } catch (error) {
-//         console.error("Error occurred: ", error);
-//         res.status(error.response.status).render("error");
-//     }
-// });
+{
+    "calories": "450-600",
+    "protein": "30-40g",
+    "fat": "25-40g",
+    "carb": "15-25g",
+    "fiber": "5-15g",
+    "notes": "These values are estimates and can vary significantly depending on the specific recipe, ingredients used (e.g., type of chicken, amount of oil, added vegetables, spices, coconut milk/cream), and serving size.  It's best to use a nutrition calculator or app, inputting the exact ingredients and quantities from your recipe for more accurate macro calculations.  The ranges provided reflect the wide variability possible in chicken curry recipes."
+}`
+
+    try {
+        const result = await openai.model.generateContent(prompt);
+        const response = result.response;
+        const text = response.text();
+
+        // Extract JSON content from the text
+        const match = text.match(/\{[^{}]*\}/);
+
+        const cleanedText = match[0];
+
+        try {
+            const jsonResponse = JSON.parse(cleanedText);// Use the cleaned text for parsing
+            console.log(jsonResponse.carb);       //for debugging
+
+            res.render("trackMeal", { 
+                submitted: true, 
+                cal: jsonResponse.calories, 
+                protein: jsonResponse.protein, 
+                fat: jsonResponse.fat, 
+                carb: jsonResponse.carb,
+                fiber: jsonResponse.fiber, 
+                notes: jsonResponse.notes 
+            });
+        } catch (error) {
+            console.error("Error occurred: ", error);
+            res.status(error.response.status).render("error");
+        }
+
+    } catch (error) {
+        console.error("Error occurred: ", error);
+        res.status(error.response.status).render("error");
+    }
+});
 
 module.exports = router;
 
