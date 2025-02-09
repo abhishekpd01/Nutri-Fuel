@@ -16,7 +16,7 @@ router.get("/TrackWorkout", function(req, res) {
 });
 
 router.get("/TrackMeal", function(req, res) {
-    res.render("trackMeal");
+    res.render("trackMeal", { submitted: false });
 });
 
 router.get("/water", async function(req, res) {

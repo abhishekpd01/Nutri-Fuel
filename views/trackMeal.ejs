@@ -4,20 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track Meal</title>
+    <link rel="stylesheet" href="/CSS/meal.css">
 </head>
 <body>
     <form action="/track/TrackMeal" method="post">
-        <input type="text" name="dishName" placeholder="Dish Name">
-        <input type="number" name="seervings" placeholder="Amount">
-        <button type="submit">go</button>
+        <div class="input-container">
+            <div class="input">
+                <input type="text" name="dishName" placeholder="Dish Name" required>
+            </div>
+            <div class="servings">
+                <div class="input ">
+                    <input type="number" name="servings" placeholder="Amount" required min="1">
+                </div>
+                <span>Serving(s)</span>
+            </div>
+            
+            <div class="track-btn ">
+                <button type="submit">Track</button>
+            </div>
+        </div>
     </form>
+
     <% if(submitted) { %>
-        <p><%= cal %></p>
-        <p><%= protein %></p>
-        <p><%= fat %></p>
-        <p><%= carb %></p>
-        <p><%= fiber %></p>
-        <p><%= notes %></p>
+        <div class="macros-container">
+            <label for="macros-container"><p>You've Consumed</p></label>
+            <div class="macros">
+                <h2>KCAL</h2>
+                <h1><%= cal %></h1>
+            </div>
+            <div class="macros">
+                <h2>PRO</h2>
+                <h1><%= protein %></h1>
+            </div>
+            <div class="macros">
+                <h2>FAT</h2>
+                <h1><%= fat %></h1>
+            </div>
+            <div class="macros">
+                <h2>CARB</h2>
+                <h1><%= carb %></h1>
+            </div>
+            <div class="macros">
+                <h2>FIBER</h2>
+                <h1><%= fiber %></h1>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p><span>NOTE:</span> <%= notes %></p>
+        </div>
     <% } %>
+    <div class="redirectBtn">
+        <a href="/"><button>Home</button></a>
+    </div>
 </body>
 </html>
